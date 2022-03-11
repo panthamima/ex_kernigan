@@ -11,7 +11,7 @@ void hello() {
 }
 
 void test_printf_c() {
-    printf("chapter_1.c:13:16: warning: unknown escape sequence: \\c\n"); // '\c' 
+    printf("chapter_1.c:13:16: warning: unknown escape sequence: '\\c'\n"); // '\c' 
 }
 
 void cels_fahr_table() {
@@ -87,6 +87,16 @@ void copy() {
 
 }
 
+void printEOF() {
+    printf("EOF = %d\n", EOF);
+}
+
+void t_s_n_count() {
+
+}
+
+
+
 int main() {
     printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     hello();
@@ -100,6 +110,8 @@ int main() {
     fahr_cels_table();
     printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_6>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     copy();
-    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_7>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    printf("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_7>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    printEOF();    
+    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_8>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 
 }
