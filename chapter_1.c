@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void hello() {
     int i;
@@ -92,9 +93,55 @@ void printEOF() {
 }
 
 void t_s_n_count() {
+    char ch;
+    int tabs, spaces, newlines;
+    tabs = spaces = newlines = 0;
 
+    while((ch = getchar()) != '.') {
+        if(ch == ' ') {
+            spaces++;
+        }
+        else if (ch == '\t') {
+            tabs++;
+        }
+        else if(ch == '\n') {
+            newlines++;
+        }
+    }
+    printf("spaces: %d, tabs: %d, newlines: %d\n", spaces, tabs, newlines);
 }
 
+void shrimp_spaces() {
+    char string[100] = "my        string       here\n";
+    printf("%s", string);
+    int i = 0;
+    while (string[i] != '\0') {
+        if (string[i] != ' ' || 
+           (string[i] == ' ' && i != 0 && i != 
+            strlen(string) && string[i+1] != ' ')) {
+            printf("%c", string[i]);
+        }
+        i++;
+    }
+}
+
+void copy_t_s_n_symbols() {
+    char ch;
+    int tabs, spaces, newlines;
+    tabs = spaces = newlines = 0;
+
+    while((ch = getchar()) != '.') {
+        if(ch == '\b') {
+            printf("\\b");
+        }else if(ch == '\n') {
+            printf("\\n");
+        }else if(ch == '\t') {
+            printf("\\t");
+        }else if(ch == '\\') {
+            printf("\\\\");
+        }
+    }
+}
 
 
 int main() {
@@ -113,5 +160,11 @@ int main() {
     printf("\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_7>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printEOF();    
     printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_8>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    t_s_n_count();
+    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    shrimp_spaces();
+    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_10>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    copy_t_s_n_symbols();
+    printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EX_11>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 
 }
